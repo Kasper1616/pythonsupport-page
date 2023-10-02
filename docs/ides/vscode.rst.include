@@ -83,6 +83,22 @@ If you want to create a new file inside a folder in your project, make sure clic
 
 3. To move a file to a folder simply click on the file and hold, then drag the file to the folder.
 
+Install requirements.txt 
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to get the packages you need for your courses you first have to navigate into the folder from where you want to access the packages (see "Creating and Opening Projects"). 
+From there on you will open up your terminal (navigate to the Menu-bar, choose Terminal -> New Terminal). You can then copy the following command into your terminal and
+press enter to execute:
+
+Windows:
+python -m pip install -r requirements.txt
+
+Mac or Linux:
+python3 -m pip install -r requirements.txt
+
+The installation of the packages will take a few minutes. After it is done you will se the path of the folder you are in followed by an "%". 
+
+
 Extensions
 ^^^^^^^^^^
 Extensions can be installed by following `these instructions <https://code.visualstudio.com/docs/editor/extension-marketplace>`__.
