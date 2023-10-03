@@ -169,7 +169,7 @@ matplotlib, which is used for plotting your data. You will typically import the 
 the following code.
 
 1. Open a new project.
-
+helos
 2. There are several different ways of importing packages. We will here show you some examples:
 
   - ``import <name of the package>``
