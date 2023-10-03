@@ -85,9 +85,9 @@ If you want to create a new file inside a folder in your project, make sure clic
 
 Install requirements.txt 
 ^^^^^^^^^^^^^^^^^^^^^^^^
+1. Navigate into the folder from where you want to access the packages (see "Creating and Opening Projects"). 
 
-In order to get the packages you need for your courses you first have to navigate into the folder from where you want to access the packages (see "Creating and Opening Projects"). 
-From there on you will open up your terminal (navigate to the Menu-bar, choose Terminal -> New Terminal). You can then copy the following command into your terminal and
+2. Open up your terminal (navigate to the Menu-bar, choose Terminal -> New Terminal). You can then copy the following command into your terminal and
 press enter to execute:
 
 Windows:
@@ -165,22 +165,31 @@ Importing packages
 
 In order to write your code you can benefit from a bunch of different python-packages that will help you with your calculation. In Python these packages typically end
 with the letters "py". For example there is sympy, which will help you with caluclating with variables (or symbols), numpy which is used for numerical calculations and 
-matplotlib, which is used for plotting your data.
+matplotlib, which is used for plotting your data. You will typically import the packages you want to use in the top of your project so that you can use them throughout 
+the following code.
 
-To choose which packages you want to import, you can write "import <name of the package>". This will already import the package into your program. In order to use the 
-functions in the program, you will have to write the name of the package, followed by "." and then you will write the function that you want to use (for example
-numpy.sqrt(2)). If you don't want to write the whole name of the packages every time you use a command from them, you can define a shorter name for them yourself, that you want
-to call them. Typically one will write "import numpy as np" instead of "import numpy" or "import sympy as sp" instead of "import sympy", so that you don't have to write 
-the entire name every time you want to call a function from that package.
+1. Open a new project.
 
-If you want to import the whole package you can use "from <name of the package> import *". The * indicates that you import everything from the package and that also means that 
-you don't have to specify which package you are using whenever you call a function, because it already knows that you will import the function from this package.
+2. There are several different ways of importing packages. We will here show you some examples:
 
-For example one can write "from sympy import *" and then create a matrix by writing "Matrix([[... , ...],[... , ...]])" instead of writing "sp.Matrix([[... , ...],[... , ...]])"
-or even "sympy.Matrix([[... , ...],[... , ...]])".
-
-Another example where you can use the "from <name of the package> import" function, is if you only want to import specific functions from the package. In that case you will write
-"from <name of the package> import <the function(s) that you want to import>". This will allow you to import only the functions that you are using.
+  - ``import <name of the package>``
+      This is the simplest way of importing packages. In order to call functions from the package you have to write the name of the package, followed by ``.`` and then 
+      the function you want to use (for example ``numpy.sqrt(2)``).
+  - ``import <name of the package> as ...``
+      If you don't want to write the whole name of the packages every time you use a command from them, you can define a shorter name for them yourself, that you want
+      to call them. Typically one will write ``import numpy as np`` instead of ``import numpy`` or ``import sympy as sp`` instead of ``import sympy``, so that you don't have to write 
+      the entire name every time you want to call a function from that package.
+  - ``from <name of the package> import *``
+      You can use this command if you want to import the whole package without having to write the name or the abbreviation of the package in front of the function. It already knows 
+      that you want to import the function from this package. The ``*`` indicates that you imported everything from this package.
+      For example one can write ``from sympy import *`` and then create a matrix by writing ``Matrix([[... , ...],[... , ...]])`` instead of writing ``sp.Matrix([[... , ...],[... , ...]])``
+      or even ``sympy.Matrix([[... , ...],[... , ...]])``.
+  - ``from <name of the package> import <name of function>``
+      You can use this command if you only want to import specific functions from the package. This will allow you to import only the functions that you are using. For example the command
+      ``from matplotlib import pyplot`` will import only the function ``pyplot`` from the package ``matplotlib``. You can then for example call the function ``pyplot.plot(x,y)``.
+  - ``import <name of the package>.<name of function> as ...``
+      This command is helpful if you again only want to import specific functions but you also want to call them something else (often times something shorter). If you for example run the
+      command ``import matplotlib.pyplot as plt`` you will import the exact same function as in the example before but you don't have to write as much in order to call the function: ``plt.plot(x, y)``.
 
 
 Customization
