@@ -101,7 +101,7 @@ Problems with Python and its Installation
 
             1. Close VSCode and kill any background processes running in the task manager.
 
-            2. Go to the file explorer and to the path :fil:`/home/<user_name>/.config/Code` and clear the contents of the folders Cache, CachedData, CachedExtensions, CachedExtensionVSIXs (if this folder exists) and Code Cache.
+            2. Go to the file explorer and to the path :file:`/home/<user_name>/.config/Code` and clear the contents of the folders Cache, CachedData, CachedExtensions, CachedExtensionVSIXs (if this folder exists) and Code Cache.
 
             3. Restart VSCode.
       
@@ -182,11 +182,63 @@ Problems with Conda and Packages
         init_printing(use_latex='mathjax')
 
 
-.. dropdown:: Multiple conda installations
+.. dropdown:: Python.app error
 
-    If you have multiple installations of conda we highly recommend that you uninstall Anaconda using `this link <https://pythonsupport.dtu.dk/uninstall/conda.html>`__ .
+    If you are having problems with running any apps from Anaconda Navigator and you get a something like this:
 
+    .. code-block:: bash
 
+        /Users/youruser/anaconda3/bin/pythonw: line 3: /Users/youruser/anaconda3/python.app/Contents/MacOS/python: No such file or directory
+
+    
+    Try to reinstall the app by running the following command in the terminal:
+
+    .. code-block:: bash
+
+        conda install python.app
+
+.. dropdown:: Conda install cannot find a certain package  (Stricly mac M-chips)
+
+    If “Conda install” cannot find a certain package even though it is on conda-forge or another channel this might be due to the package not being available for arm-chips (M-cips mac).
+    You can check if the package is available for arm-chips by checking the package on the conda-forge website under files. This is a common problem for a package such as pymeep which is used in dtu HPC. 
+
+    To solve this:
+
+    Open terminal and run the following:
+
+    1. Make sure to download the rosetta license
+
+    .. code-block:: bash
+
+        /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+    
+    2. Create a new environment
+
+    .. code-block:: bash
+
+        conda create -n your_env_name
+
+    3. Open the envionment
+
+    .. code-block:: bash
+
+        conda activate your_env_name
+    
+    4. Set it to osx-64(older mac installations)
+
+    .. code-block:: bash
+
+        conda config --env --set subdir osx-64
+
+    5. Install package
+
+    .. code-block:: bash
+
+        conda install your_package_name
+
+.. dropdown:: Previous installation of Anaconda
+
+    If you have previously installed Anaconda and are now using the Python installation from our guides, you might run into problems with the previous installation. This can be solved by uninstalling Anaconda using `this link <https://pythonsupport.dtu.dk/uninstall/conda.html>`__ .
 
 Problems with Visual Studio Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
